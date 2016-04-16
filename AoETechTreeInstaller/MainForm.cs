@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AoETechTreeInstaller
@@ -109,6 +110,10 @@ namespace AoETechTreeInstaller
 
 				// Save patched exe
 				exeFile.Save(_exeTextBox.Text);
+
+				// Copy DLL if existing
+				if(File.Exists(TECH_TREE_DLL_NAME))
+					File.Copy(TECH_TREE_DLL_NAME, Path.Combine(Path.GetDirectoryName(_exeTextBox.Text), TECH_TREE_DLL_NAME), true);
 			}
 			catch(Exception ex)
 			{
@@ -118,7 +123,7 @@ namespace AoETechTreeInstaller
 			}
 
 			// Successful
-			MessageBox.Show("The patch was applied successfully!", "Patch successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("The patch was applied successfully!\nDo not forget to manually update your DAT file.", "Patch successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		private void _uninstallButton_Click(object sender, EventArgs e)
@@ -140,6 +145,11 @@ namespace AoETechTreeInstaller
 
 				// Save patched exe
 				exeFile.Save(_exeTextBox.Text);
+
+				// Delete DLL if existing
+				string dllPath = Path.Combine(Path.GetDirectoryName(_exeTextBox.Text), TECH_TREE_DLL_NAME);
+				if(File.Exists(dllPath))
+					File.Delete(dllPath);
 			}
 			catch(Exception ex)
 			{
