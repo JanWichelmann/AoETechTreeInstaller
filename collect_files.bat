@@ -54,8 +54,8 @@ cd ..
 cd %VIEW_INSTALL_DIR%
 copy ..\..\..\%INSTALLER_RELEASE_PATH%\AoETechTreeInstaller.exe .
 copy ..\..\..\%INSTALLER_RELEASE_PATH%\IORAMHelper.dll .
-copy ..\..\..\%VIEW_RELEASE_PATH%\LICENSE .
-copy ..\..\..\%VIEW_RELEASE_PATH%\README.md .
+copy ..\..\..\%INSTALLER_RELEASE_PATH%\LICENSE .
+copy ..\..\..\%INSTALLER_RELEASE_PATH%\README.md .
 copy ..\..\..\%VIEW_RELEASE_PATH%\TechTree.dll .
 cd ..
 
