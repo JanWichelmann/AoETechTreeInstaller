@@ -67,6 +67,7 @@
 			// 
 			// _installButton
 			// 
+			this._installButton.Enabled = false;
 			this._installButton.Location = new System.Drawing.Point(140, 36);
 			this._installButton.Name = "_installButton";
 			this._installButton.Size = new System.Drawing.Size(100, 23);
@@ -77,6 +78,7 @@
 			// 
 			// _uninstallButton
 			// 
+			this._uninstallButton.Enabled = false;
 			this._uninstallButton.Location = new System.Drawing.Point(246, 36);
 			this._uninstallButton.Name = "_uninstallButton";
 			this._uninstallButton.Size = new System.Drawing.Size(100, 23);
